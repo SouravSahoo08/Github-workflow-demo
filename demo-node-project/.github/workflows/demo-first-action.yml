@@ -1,5 +1,6 @@
 name: Test Demo Action
 on: push
+
 jobs:
   test:
     runs-on: ubuntu-latest
