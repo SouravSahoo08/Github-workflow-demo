@@ -10,3 +10,11 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
+
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Build
+          run: npm run build
+        - name: Deploy
+          run: echo "Deployment initiated"
