@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Event
-        run: echo "${{ github }}"
+        run: echo "${{ github.event }}"
         
 
   
