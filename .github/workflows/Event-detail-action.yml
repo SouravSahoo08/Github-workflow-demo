@@ -1,5 +1,5 @@
 name: Event driven action
-on: workflow_dispatch
+on: issues
 jobs:
   issue-event-call:
     runs-on: ubuntu-latest
