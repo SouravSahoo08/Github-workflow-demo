@@ -1,0 +1,11 @@
+name: Test Action Workflow
+on: workflow_dispatch
+jobs:
+  issue-event-call:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Event
+        run: echo "${{ github.event }}"
+        
+
+  
