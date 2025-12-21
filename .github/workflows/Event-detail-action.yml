@@ -1,4 +1,4 @@
-name: Test Action Workflow
+name: Event driven action
 on: workflow_dispatch
 jobs:
   issue-event-call:
