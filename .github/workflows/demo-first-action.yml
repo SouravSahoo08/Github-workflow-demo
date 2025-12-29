@@ -3,6 +3,8 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    outputs:
+      test_results: ${{ steps.test-step-data.outputs.result }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -10,6 +12,9 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
+      - name: Pass Data
+        id: test-step-data
+        run: echo "result=hello world" >> "$GITHUB_OUTPUT"
 
   build:
       runs-on: ubuntu-latest
@@ -26,6 +31,8 @@ jobs:
           with:
             name: dist-files
             path: dist
+        - name: Get data
+          run: echo "Data from Test Job ${{ needs.test.outputs.test_results }}"
   
   deploy:
       runs-on: ubuntu-latest
